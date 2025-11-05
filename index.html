@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viton - Virtual Dressing Room</title>
+    <link href="css/dark-theme.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/tryon.css" rel="stylesheet">
+    <link href="css/upload.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                VITON
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showPage('upload')">Virtual Try-On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showPage('saved-looks')">Saved Looks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="authLink" onclick="showPage('login')">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active home-page">
+        <!-- Hero Section -->
+<section class="hero-section">
+        
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="hero-title">Try Before You Buy</h1>
+                <p class="hero-subtitle">Experience the future of online shopping with AI-powered virtual try-on technology</p>
+                <button class="btn btn-primary-custom" onclick="showPage('upload')">
+                    Start Virtual Try-On
+                </button>
+            </div>
+            <div class="col-lg-4 hero-image">
+                <img src="background.png" alt="Background" class="img-fluid" style="width: 100%; height: 700%; object-fit: contain; background-size: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section -->
+        <!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <h2 class="section-title fade-in">Meet Our Team</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+                <div class="team-card fade-in">
+                    <div class="team-avatar">
+                        <!-- Option A: If images are in 'images' folder -->
+                        <img src="images/rakshit.png" alt="Rakshit Bhardwaj">
+                        
+                        <!-- Option B: If images are in 'assets' folder -->
+                        <!-- <img src="assets/rakshit.png" alt="Rakshit Bhardwaj"> -->
+                    </div>
+                    <div class="team-name">Rakshit Bhardwaj</div>
+                    <div class="team-role">Founder</div>
+                    <p class="team-bio">Visionary leader driving innovation in AI-powered fashion technology.</p>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6">
+                <div class="team-card fade-in">
+                    <div class="team-avatar">
+                        <img src="images/kamal.png" alt="Kamal Sharma" height="50" width="50">
+                    </div>
+                    <div class="team-name">Kamal Sharma</div>
+                    <div class="team-role">Founder</div>
+                    <p class="team-bio">Leader focused on building cutting-edge solutions for online shopping.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Project Section -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section-title text-white fade-in">Why Choose Viton?</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card fade-in">
+                            
+                            <h4>AI-Powered Try-On</h4>
+                            <p>Advanced machine learning algorithms provide realistic virtual fitting experiences</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card fade-in">
+                            
+                            <h4>Seamless Experience</h4>
+                            <p>Optimized for all devices with intuitive interface</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card fade-in">
+                            
+                            <h4>Social Integration</h4>
+                            <p>Save your looks and share with friends</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h5><i class="fas fa-magic me-2"></i>StyleVision</h5>
+                        <p>Revolutionizing online fashion with AI-powered virtual try-on technology.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" onclick="showPage('upload')">Virtual Try-On</a></li>
+                            <li><a href="#" onclick="showPage('saved-looks')">Saved Looks</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5>Contact Info</h5>
+                        <p><i class="fas fa-envelope me-2"></i>hello@viton.com</p>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="text-center">
+                    <p>&copy; 2025 VITON. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- UPLOAD PAGE -->
+    <div id="upload" class="page upload-page">
+        <section class="upload-section">
+            <div class="container">
+                <div class="upload-container">
+                    <h1 class="page-title">Upload Your Photos</h1>
+                    <p class="page-subtitle">Upload front, back & side photos for the best virtual try-on experience</p>
+                    
+                    <!-- Upload Options -->
+                    <div class="upload-options" id="uploadOptions">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="upload-option" id="photoOption">
+                                    <div class="option-icon"><i class="fas fa-camera"></i></div>
+                                    <h4>Upload Photos</h4>
+                                    <p>Upload front, back & side photos</p>
+                                    <button class="btn upload-btn" onclick="goToUploadConfirmation(event)">Choose Photos</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="upload-option" id="videoOption">
+                                    <div class="option-icon"><i class="fas fa-video"></i></div>
+                                    <h4>Upload Video</h4>
+                                    <p>Upload a 360° video</p>
+                                    <button class="btn upload-btn">Choose Video</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Upload Zones -->
+                    <div class="photo-upload-section" id="photoUploadSection" style="display: none;">
+                        <div class="row">
+                            <div class="col-lg-4 mb-4">
+                                <div class="upload-zone" id="frontZone">
+                                    <div class="upload-icon"><i class="fas fa-user"></i></div>
+                                    <div class="upload-text">Front Photo</div>
+                                    <div class="upload-subtitle">Face forward</div>
+                                    <button class="btn upload-btn-small" onclick="document.getElementById('frontInput').click()">
+                                        <i class="fas fa-camera me-1"></i>Upload
+                                    </button>
+                                    <input type="file" id="frontInput" class="file-input" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <div class="upload-zone" id="backZone">
+                                    <div class="upload-icon"><i class="fas fa-user-slash"></i></div>
+                                    <div class="upload-text">Back Photo</div>
+                                    <div class="upload-subtitle">Turn around</div>
+                                    <button class="btn upload-btn-small" onclick="document.getElementById('backInput').click()">
+                                        <i class="fas fa-camera me-1"></i>Upload
+                                    </button>
+                                    <input type="file" id="backInput" class="file-input" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <div class="upload-zone" id="sideZone">
+                                    <div class="upload-icon"><i class="fas fa-user-alt"></i></div>
+                                    <div class="upload-text">Side Photo</div>
+                                    <div class="upload-subtitle">Profile view</div>
+                                    <button class="btn upload-btn-small" onclick="document.getElementById('sideInput').click()">
+                                        <i class="fas fa-camera me-1"></i>Upload
+                                    </button>
+                                    <input type="file" id="sideInput" class="file-input" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-outline-secondary me-2" id="backToOptions">
+                                <i class="fas fa-arrow-left me-2"></i>Back to Options
+                            </button>
+                            <button class="btn btn-primary" id="continueToStyle" style="display: none;" onclick="handleContinueToStyle()">
+                                <i class="fas fa-tshirt me-2"></i>Continue to Choose Style
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Uploading...</span>
+                            <span id="progressText">0%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- VIRTUAL TRY-ON PAGE -->
+    <div id="virtual-tryon" class="page tryon-page" style="display:none;">
+  <section class="tryon-section">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Virtual Try-On Studio</h1>
+        <p class="page-subtitle">Choose your style, see recommendations, and try on clothes virtually</p>
+      </div>
+
+      <!-- Step 1: Style Options -->
+      <div class="style-options-section" id="styleOptionsSection">
+        
+
+        <div class="style-category-grid">
+          <div class="style-category-card selected" data-category="tops">
+            <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="category-name">Tops & Shirts</div>
+          </div>
+          <div class="style-category-card" data-category="bottoms">
+            <div class="category-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="category-name">Pants & Bottoms</div>
+          </div>
+          <div class="style-category-card" data-category="dresses">
+            <div class="category-icon"><i class="fas fa-female"></i></div>
+            <div class="category-name">Dresses</div>
+          </div>
+          <div class="style-category-card" data-category="jackets">
+            <div class="category-icon"><i class="fas fa-coat-arms"></i></div>
+            <div class="category-name">Jackets & Coats</div>
+          </div>
+        </div>
+
+        <div class="options-row">
+          <div class="option-group">
+            <div class="option-title">Preferred Colors</div>
+            <div class="color-palette">
+              <div class="color-option selected" style="background:#000" data-color="black"></div>
+              <div class="color-option" style="background:#fff;border:1px solid #ddd" data-color="white"></div>
+              <div class="color-option" style="background:#dc3545" data-color="red"></div>
+              <div class="color-option" style="background:#007bff" data-color="blue"></div>
+              <div class="color-option" style="background:#28a745" data-color="green"></div>
+              <div class="color-option" style="background:#ffc107" data-color="yellow"></div>
+              <div class="color-option" style="background:#6f42c1" data-color="purple"></div>
+              <div class="color-option" style="background:#fd7e14" data-color="orange"></div>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <div class="option-title">Your Size</div>
+            <div class="size-grid">
+              <div class="size-option" data-size="XS">XS</div>
+              <div class="size-option selected" data-size="S">S</div>
+              <div class="size-option" data-size="M">M</div>
+              <div class="size-option" data-size="L">L</div>
+              <div class="size-option" data-size="XL">XL</div>
+              <div class="size-option" data-size="XXL">XXL</div>
+            </div>
+          </div>
+        </div>
+
+          <div class="text-center mt-4">
+            <button class="btn viton-btn" id="showRecommendationsBtn" type="button" onclick="showRecommendations()">
+              <i class="fas fa-search me-2"></i>Find Recommendations
+            </button>
+          </div>
+          <script>
+            function showRecommendations() {
+              document.getElementById('styleOptionsSection').style.display = 'none';
+              document.getElementById('productRecommendations').style.display = 'block';
+              if (typeof loadProducts === 'function') loadProducts();
+            }
+          </script>
+      </div>
+
+      <!-- Step 2: Product Recommendations -->
+      <div class="product-recommendations" id="productRecommendations" style="display:none;">
+        <h3 class="section-title"><i class="fas fa-star"></i> Recommended for You</h3>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="text-center mt-3">
+          <button class="btn btn-back" id="backToStyleBtn" type="button"><i class="fas fa-arrow-left me-2"></i>Back to Style Options</button>
+        </div>
+      </div>
+
+      <!-- Step 3: VITON Result -->
+      <div class="viton-result" id="vitonResult" style="display:none;">
+        <h3 class="section-title"><i class="fas fa-magic"></i> Virtual Try-On Result</h3>
+
+        <div class="viton-viewer">
+          <div class="before-after">
+            <div class="image-container">
+              <div class="image-placeholder"><i class="fas fa-user fa-3x mb-2"></i><br>Original Photo</div>
+              <div class="processing-overlay" id="processingOverlay1"><div class="processing-spinner"><i class="fas fa-cog"></i></div><div class="processing-text">Processing...</div></div>
+            </div>
+            <div class="image-label">Before</div>
+          </div>
+
+          <div class="vs-icon"><i class="fas fa-arrow-right"></i></div>
+
+          <div class="before-after">
+            <div class="image-container after">
+              <div class="image-placeholder"><i class="fas fa-magic fa-3x mb-2"></i><br>AI Generated Result</div>
+              <div class="processing-overlay" id="processingOverlay2"><div class="processing-spinner"><i class="fas fa-cog"></i></div><div class="processing-text">AI Magic in Progress...</div></div>
+            </div>
+            <div class="image-label">After VITON</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="alert alert-info mb-3"><i class="fas fa-info-circle me-2"></i><strong>Amazing!</strong> You look great in this <span id="selectedItemName">outfit</span>!</div>
+        </div>
+
+        <div class="action-section">
+          <button class="btn action-btn btn-save" id="saveLookBtn" type="button"><i class="fas fa-heart me-2"></i>Save This Look</button>
+          <button class="btn action-btn btn-share" id="shareLookBtn" type="button"><i class="fas fa-share-alt me-2"></i>Share Result</button>
+          <button class="btn action-btn btn-back" id="backToRecommendationsBtn" type="button"><i class="fas fa-arrow-left me-2"></i>Try Another Item</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Minimal frontend wiring for this section.
+  (function () {
+    // show products area and call loadProducts if available
+    const showRecommendationsBtn = document.getElementById('showRecommendationsBtn');
+    const productRecommendations = document.getElementById('productRecommendations');
+    const styleOptionsSection = document.getElementById('styleOptionsSection');
+    const backToStyleBtn = document.getElementById('backToStyleBtn');
+
+    if (showRecommendationsBtn) {
+      showRecommendationsBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (styleOptionsSection) styleOptionsSection.style.display = 'none';
+        if (productRecommendations) productRecommendations.style.display = 'block';
+        // call loadProducts() from main.js if available
+        if (typeof loadProducts === 'function') loadProducts();
+      });
+    }
+
+    if (backToStyleBtn) {
+      backToStyleBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (productRecommendations) productRecommendations.style.display = 'none';
+        if (styleOptionsSection) styleOptionsSection.style.display = 'block';
+        // optionally clear product grid
+        const pg = document.getElementById('productGrid');
+        if (pg) pg.innerHTML = '';
+      });
+    }
+
+    // category click wiring (toggle selected)
+    document.addEventListener('click', function (e) {
+      const cat = e.target.closest('.style-category-card');
+      if (!cat) return;
+      document.querySelectorAll('.style-category-card').forEach(c => c.classList.remove('selected'));
+      cat.classList.add('selected');
+      // optional: immediately refresh product recommendations for selected category
+      if (typeof loadProducts === 'function') loadProducts();
+    });
+
+    // color/size selection toggles
+    document.addEventListener('click', function (e) {
+      const color = e.target.closest('.color-option');
+      if (color) {
+        document.querySelectorAll('.color-option').forEach(c => c.classList.remove('selected'));
+        color.classList.add('selected');
+      }
+      const size = e.target.closest('.size-option');
+      if (size) {
+        document.querySelectorAll('.size-option').forEach(s => s.classList.remove('selected'));
+        size.classList.add('selected');
+      }
+    });
+  })();
+</script>
+
+    <!-- SAVED LOOKS PAGE -->
+    <div id="saved-looks" class="page">
+        <section class="upload-section">
+            <div class="container" id="savedLooksContainer">
+                <div class="upload-container">
+                    <h1 class="page-title">Saved Looks</h1>
+                    <div class="text-center">
+                        <i class="fas fa-spinner fa-spin fa-3x"></i>
+                        <p>Loading saved looks...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div id="login" class="page">
+        <section class="upload-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="upload-container">
+                            <h1 class="page-title">Login</h1>
+                            <p class="page-subtitle">Sign in to your StyleVision account</p>
+                            
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn viton-btn w-100">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                                </button>
+                            </form>
+                            
+                            <div class="text-center mt-3" data-color="#28a745">
+                                <p>Don't have an account?  <a href="#" onclick="showPage('register')">Sign up</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- REGISTER PAGE -->
+    <div id="register" class="page">
+        <section class="upload-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="upload-container">
+                            <h1 class="page-title">Register</h1>
+                            <p class="page-subtitle">Create your StyleVision account</p>
+                            
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="registerName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" required minlength="6">
+                                </div>
+                                <button type="submit" class="btn viton-btn w-100">
+                                    <i class="fas fa-user-plus me-2"></i>Sign Up
+                                </button>
+                            </form>
+                            
+                            <div class="text-center mt-3">
+                                <p>Already have an account? <a href="#" onclick="showPage('login')">Sign in</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login success modal -->
+<div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-labelledby="loginSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginSuccessModalLabel">Welcome back!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="loginSuccessMessage">You have successfully logged in.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="goToUploadBtn" type="button" class="btn viton-btn">Go to Virtual Try-On</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Scripts -->
+   <script>
+     // Lightweight, safe handler to navigate to the virtual try-on SPA view.
+     function continueToTryon(e) {
+       e.preventDefault();
+
+       // persist selected choices (if any) so try-on page can read them
+       const selectedSizeEl = document.querySelector('.size-card.selected, .size-option.selected');
+       if (selectedSizeEl && selectedSizeEl.dataset.size) {
+         localStorage.setItem('recommendedSize', selectedSizeEl.dataset.size);
+       }
+       const selectedCatEl = document.querySelector('.category-card.selected, .style-category-card.selected');
+       if (selectedCatEl && selectedCatEl.dataset.category) {
+         localStorage.setItem('recommendedCategory', selectedCatEl.dataset.category);
+       }
+
+       // Use SPA navigation if available
+       if (typeof showPage === 'function') {
+         showPage('virtual-tryon');
+         // ensure product list / try-on init runs after navigation
+         setTimeout(() => {
+           if (typeof loadProducts === 'function') loadProducts();
+           if (typeof initializeVirtualTryOnPage === 'function') initializeVirtualTryOnPage();
+         }, 150);
+         return;
+       }
+
+       // fallback
+       window.location.href = '/virtual-tryon';
+     }
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Handle the upload confirmation flow
+        function goToUploadConfirmation(event) {
+            event.preventDefault();
+            window.location.href = 'confirmation.html';
+        }
+
+        // When the page loads, check if we should show the photo upload section
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('section') === 'photoUploadSection' && localStorage.getItem('uploadConfirmed') === 'true') {
+                showPage('upload');
+                setTimeout(() => {
+                    const uploadOptions = document.getElementById('uploadOptions');
+                    const photoUploadSection = document.getElementById('photoUploadSection');
+                    if (uploadOptions) uploadOptions.style.display = 'none';
+                    if (photoUploadSection) photoUploadSection.style.display = 'block';
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
