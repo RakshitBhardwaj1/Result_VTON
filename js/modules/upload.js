@@ -178,41 +178,26 @@
   window.initializeUpload = initializeUpload;
   window.handlePhotoUpload = handlePhotoUpload;
   window.sendUploads = sendUploads;
-  // Backwards-compatible handler for inline onclick in index.html
+  // Handler for Continue to Choose Style button - shows style options section
   window.handleContinueToStyle = function () {
     try {
-      // Save any selected size/category preferences
-      const selectedSizeEl = document.querySelector('.size-card.selected, .size-option.selected');
-      if (selectedSizeEl && selectedSizeEl.dataset.size) {
-        localStorage.setItem('recommendedSize', selectedSizeEl.dataset.size);
-      }
-      const selectedCatEl = document.querySelector('.category-card.selected, .style-category-card.selected');
-      if (selectedCatEl && selectedCatEl.dataset.category) {
-        localStorage.setItem('recommendedCategory', selectedCatEl.dataset.category);
-      }
-
-      // Navigate to virtual-tryon page and show style options section
+      // Navigate to virtual-tryon page
       if (typeof showPage === 'function') {
         showPage('virtual-tryon');
-        // Show the style options section specifically
-        setTimeout(() => {
-          const styleOptionsSection = document.getElementById('styleOptionsSection');
-          const productRecommendations = document.getElementById('productRecommendations');
-          const vitonResult = document.getElementById('vitonResult');
-          
-          if (styleOptionsSection) styleOptionsSection.style.display = 'block';
-          if (productRecommendations) productRecommendations.style.display = 'none';
-          if (vitonResult) vitonResult.style.display = 'none';
-        }, 100);
-        return;
       }
-
-      // Fallback for non-SPA navigation
-      window.location.href = 'index.html?page=virtual-tryon';
+      
+      // Ensure the style options section is visible (not product recommendations)
+      setTimeout(() => {
+        const styleOptionsSection = document.getElementById('styleOptionsSection');
+        const productRecommendations = document.getElementById('productRecommendations');
+        const vitonResult = document.getElementById('vitonResult');
+        
+        if (styleOptionsSection) styleOptionsSection.style.display = 'block';
+        if (productRecommendations) productRecommendations.style.display = 'none';
+        if (vitonResult) vitonResult.style.display = 'none';
+      }, 100);
     } catch (e) {
       console.error('handleContinueToStyle error:', e);
-      // Even if error occurs, try to navigate
-      if (typeof showPage === 'function') showPage('virtual-tryon');
     }
   };
 })();

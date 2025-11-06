@@ -71,52 +71,29 @@
   }
 
   function showPage(pageId) {
-    if (!pageId) {
-      console.warn('showPage called with no pageId');
-      return;
-    }
-    
+    if (!pageId) return;
     if (PROTECTED_PAGES.includes(pageId) && !isUserAuthenticated()) {
-      console.log(`Page ${pageId} requires authentication, showing auth modal`);
       showAuthRequiredModal(pageId);
       return;
     }
 
-    // Hide all pages first
-    document.querySelectorAll('.page').forEach(p => { 
-      p.classList.remove('active'); 
-      p.style.display = 'none'; 
-    });
-    
-    // Try to find and show the target page
+    document.querySelectorAll('.page').forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
     const target = document.getElementById(pageId);
     if (target) {
-      console.log(`Navigating to page: ${pageId}`);
       target.style.display = 'block';
       target.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Special handling for virtual-tryon page
       if (pageId === 'virtual-tryon') {
-        setTimeout(() => {
-          if (typeof initializeVirtualTryOnPage === 'function') {
-            try { initializeVirtualTryOnPage(); } catch (err) { console.error('initializeVirtualTryOnPage error:', err); }
-          }
-          if (typeof loadProducts === 'function') {
-            try { loadProducts(); } catch (err) { console.error('loadProducts error:', err); }
-          }
-        }, 100);
+        if (typeof initializeVirtualTryOnPage === 'function') {
+          try { initializeVirtualTryOnPage(); } catch (err) { console.error(err); }
+        }
       }
       return;
     }
 
-    // Fallback to home only if target not found
-    console.warn(`Page "${pageId}" not found, falling back to home`);
     const home = document.getElementById('home');
-    if (home) { 
-      home.style.display = 'block'; 
-      home.classList.add('active'); 
-    }
+    if (home) { home.style.display = 'block'; home.classList.add('active'); }
   }
 
   function showNotification(message, type = 'info') {
