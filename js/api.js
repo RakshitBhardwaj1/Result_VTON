@@ -139,8 +139,12 @@ class APIService {
         return await this.handleResponse(response);
     }
 
-    async getRecommendations() {
-        const response = await fetch(`${API_BASE_URL}/products/recommendations`, {
+    async getRecommendations(filters = {}) {
+        // Build query string from filters (category, size, colors)
+        const queryString = new URLSearchParams(filters).toString();
+        const url = `${API_BASE_URL}/products/recommendations${queryString ? '?' + queryString : ''}`;
+        
+        const response = await fetch(url, {
             headers: this.getHeaders()
         });
         
