@@ -172,15 +172,7 @@ function App() {
               <div className="error-text">
                 <h3 className="error-title">Error</h3>
                 <p className="error-message">
-                  Unlogged user is running out of daily ZeroGPU quotas. Signup for free on{' '}
-                  <a href="https://huggingface.co/join" target="_blank" rel="noopener noreferrer">
-                    https://huggingface.co/join
-                  </a>{' '}
-                  or login on{' '}
-                  <a href="https://huggingface.co/login" target="_blank" rel="noopener noreferrer">
-                    https://huggingface.co/login
-                  </a>{' '}
-                  to get more ZeroGPU quota now.
+                  GPU Not Detected: This feature requires a GPU to function properly. Please switch to a device with GPU support to continue.
                 </p>
               </div>
             </div>
